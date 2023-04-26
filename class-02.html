@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .btn-red {
+            padding: 10px 20px 10px 20px;
+            background-color: tomato;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn-green {
+            padding: 10px 20px 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+        }
+    </style>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+</head>
+
+<body>
+
+
+    <div id="app">
+
+        <button :class="active ? 'btn-red' : 'btn-green'" @click="toggle">Click me</button>
+
+    </div>
+
+
+    <script>
+
+        Vue.createApp({
+
+            data() {
+                return {
+                    buttonClass: 'btn-red',
+                    active: false
+                };
+            },
+        
+            methods: {
+
+                toggle() {
+                    this.active = !this.active;
+                }
+
+            }
+
+        }).mount('#app');
+
+
+    </script>
+
+</body>
+
+</html>
